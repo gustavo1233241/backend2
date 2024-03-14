@@ -3,6 +3,25 @@ import fs from 'fs';
 import chalk from 'chalk';
 import { error } from 'console';
 
+
+
+
+const textoTest="São geralmente recuperados a partir de um objeto [FileList](https://developer.mozilla.org/pt-BR/docs/Web/API/FileList) que é retornado como resultado da seleção, pelo usuário, de arquivos através do elemento [<input>](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/Input), a partir do objeto [DataTransfer](https://developer.mozilla.org/pt-BR/docs/Web/API/DataTransfer) utilizado em operações de arrastar e soltar, ou a partir da API `mozGetAsFile()` em um [HTMLCanvasElement](https://developer.mozilla.org/pt-BR/docs/Web/API/HTMLCanvasElement). Em Gecko, códigos com privilégiios podem criar objetos File representando qualquer arquivo local sem a intereção do usuário (veja [Implementation notes](https://developer.mozilla.org/pt-BR/docs/Web/API/File#implementation_notes) para mais informações"
+
+
+function extraLinks(texto){
+
+
+    const regex = /\[[^[\]]*?]\(https?:\/\/[^\s?#.]*[^\s]*\)/gm;
+
+    const capturas = texto.match(regex);
+
+    console.log(capturas)
+}
+
+
+extraLinks(textoTest)
+
 // console.log(chalk.blue('Olá mundo'));
 
 // console.log(chalk.blue.bgWhite.bold("SENAI"));
@@ -44,7 +63,7 @@ console.log(erro)
 // }
 // pegaArquivo('./arquivos/')
 
-function trataErro(erro){
+/*function trataErro(erro){
 
     console.log(erro)
      throw new Error(chalk.red(erro.code, "não ha arquivo no diretorio"))
@@ -73,3 +92,4 @@ console.log(chalk.cyan("Operação concluida"))
 }
 pegaArquivo("./arquivos/texto.md");
 pegaArquivo("./arquivos/");
+*/
