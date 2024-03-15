@@ -12,11 +12,18 @@ const textoTest="São geralmente recuperados a partir de um objeto [FileList](ht
 function extraLinks(texto){
 
 
-    const regex = /\[[^[\]]*?]\(https?:\/\/[^\s?#.]*[^\s]*\)/gm;
+    const regex = /\[([^[\]]*?)]\((https?:\/\/[^\s?#.]*[^\s]*)\)/gm;
 
-    const capturas = texto.match(regex);
+   // const capturas = regex.exec(texto)
+    const capturas = [...texto.matchAll(regex)];
 
-    console.log(capturas)
+
+const resultados=capturas.map(capturas=>({[capturas[1]]:capturas[2]}))
+
+   // console.log(capturas);
+
+
+   console.log(resultados);
 }
 
 
